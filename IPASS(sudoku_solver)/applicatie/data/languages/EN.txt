@@ -1,0 +1,25 @@
+Solve sudoku (1)
+Hint for a sudoku (2)
+Change language/Wijzig taal (3)
+Manual (4)
+Insert sudoku from textrule (1)
+Import sudoku from file (2)
+Back (x)
+Made a choice: 
+Insert the sudoku: 
+Insert the file name: 
+Manual
+Dutch (NL)
+English (EN)
+Inserted sudoku:
+Solution:
+Made a choice from 1, 2, 3 or x.
+Made a choice from 1, 2 or x.
+The lenght of the sudoku must be 81 characters.
+The selected file was not found, be sure the file ends with ".txt" and is placed in the "sudokus" folder.
+The lenght of the sudoku from te file must be 81 characters.
+There is no solution for this sudoku.
+The choosen language is not available.
+I want the next hint (1)
+There are no more hints.
+Made a choice from 1 or x.

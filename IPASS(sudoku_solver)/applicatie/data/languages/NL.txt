@@ -1,0 +1,26 @@
+Sudoku oplossen (1)
+Hint voor een sudoku (2)
+Taal wijzigen/Change language (3)
+Handleiding (4)
+Sudoku invoeren uit een tekstregel (1)
+Sudoku invoeren uit een bestand (2)
+Terug(x)
+Maak uw keuze: 
+Voer de sudoku in: 
+Voer de bestandsnaam in van de sudoku: 
+Handleiding
+Nederlands (NL)
+Engels (EN)
+Ingevoerde sudoku:
+Oplossing:
+Maak een keuze uit 1, 2, 3 of 4.
+Maak een keuze uit 1, 2 of x.
+De sudoku moet een lengte hebben van 81 karakters.
+Het gekozen bestand is niet gevonden, het bestand moet eindigen met ".txt" en in de map "sudokus" zijn geplaatst.
+De sudoku in het bestand moet een lengte hebben van 81 karakters.
+Er is geen oplossing voor deze sudoku.
+De gekozen taal is niet beschikbaar.
+Ik wil nog een hint (1)
+Er zij geen hints meer mogelijk.
+Maak een keuze uit 1 of x.
+

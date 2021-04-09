@@ -1,0 +1,15 @@
+Controls
+- To choose a option, insert the value after the option.
+- A "x" means in all cases back, except when you are in the main menu.
+
+Insert a sudoku through a textline
+- The length of the textrule is exactly 81 characters.
+- 1t/m9 means a known value in the sudoku.
+- all characters except 1t/m9 means a unknown value.
+
+Insert a sudoku through a file
+- The file must have the extenssion ".txt".
+- The file must be placed in the folder "data\sudokus".
+- The file must contain exactly 81 characters.
+- 1t/m9 means a known value in the sudoku.
+- all characters except 1t/m9 means a unknown value in the sudoku.

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sudoku_solver</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sudoku_solver</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccarlo%5Conedrive%20-%20stichting%20hogeschool%20utrecht%5Cipass%5Ccode%5Csudoku-solver%5Csudoku_solver.py">c:\users\carlo\onedrive - stichting hogeschool utrecht\ipass\code\sudoku-solver\sudoku_solver.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="sudoku_solver.html#Sudoku">Sudoku</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sudoku">class <strong>Sudoku</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>You&nbsp;can&nbsp;use&nbsp;this&nbsp;class&nbsp;for&nbsp;creating&nbsp;a&nbsp;sudoku-objects&nbsp;from&nbsp;a&nbsp;string<br>
+or&nbsp;from&nbsp;a&nbsp;file.&nbsp;With&nbsp;the&nbsp;method&nbsp;"solve"&nbsp;you&nbsp;can&nbsp;solve&nbsp;any&nbsp;sudoku.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Sudoku-__init__"><strong>__init__</strong></a>(self, sudoku)</dt><dd><tt>This&nbsp;constructor&nbsp;create&nbsp;an&nbsp;<a href="builtins.html#object">object</a>&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku.<br>
+The&nbsp;constructor&nbsp;converts&nbsp;the&nbsp;given&nbsp;string&nbsp;in&nbsp;a&nbsp;2d&nbsp;list<br>
+that&nbsp;contains&nbsp;9&nbsp;sub-lists&nbsp;that&nbsp;performs&nbsp;the&nbsp;rows&nbsp;of&nbsp;the&nbsp;sudoku.<br>
+For&nbsp;the&nbsp;known&nbsp;values&nbsp;you&nbsp;can&nbsp;use&nbsp;the&nbsp;numbers&nbsp;1&nbsp;to&nbsp;9,&nbsp;and&nbsp;for&nbsp;the<br>
+unknown&nbsp;values&nbsp;you&nbsp;can&nbsp;use&nbsp;any&nbsp;other&nbsp;character&nbsp;or&nbsp;a&nbsp;zero.<br>
+The&nbsp;sign&nbsp;for&nbsp;the&nbsp;unknown&nbsp;values&nbsp;is&nbsp;"-",&nbsp;and&nbsp;for&nbsp;the&nbsp;known&nbsp;values<br>
+the&nbsp;number&nbsp;it&nbsp;self.&nbsp;This&nbsp;data&nbsp;will&nbsp;be&nbsp;stored&nbsp;in&nbsp;attribute&nbsp;"data"<br>
+of&nbsp;the&nbsp;created&nbsp;<a href="builtins.html#object">object</a>.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;string&nbsp;with&nbsp;a&nbsp;length&nbsp;of&nbsp;81&nbsp;characters.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-alldifferent_tabu_search"><strong>alldifferent_tabu_search</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;is&nbsp;the&nbsp;algorithm&nbsp;for&nbsp;solving&nbsp;the&nbsp;sudoku.<br>
+Where&nbsp;you&nbsp;fist&nbsp;must&nbsp;run&nbsp;the&nbsp;method&nbsp;"create_possibilities"<br>
+before&nbsp;you&nbsp;can&nbsp;run&nbsp;this&nbsp;method.&nbsp;And&nbsp;the&nbsp;attribute&nbsp;"data"<br>
+of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;will&nbsp;be&nbsp;replaced&nbsp;for&nbsp;the&nbsp;solved&nbsp;sudoku.<br>
+&nbsp;<br>
+The&nbsp;algorithm&nbsp;works&nbsp;as&nbsp;follows.&nbsp;First&nbsp;there&nbsp;will&nbsp;be&nbsp;check&nbsp;how&nbsp;many&nbsp;known&nbsp;values&nbsp;there&nbsp;are.<br>
+The&nbsp;next&nbsp;step&nbsp;run&nbsp;the&nbsp;alldifferent&nbsp;algorithm&nbsp;and&nbsp;the&nbsp;sudoku&nbsp;strategies.&nbsp;After&nbsp;this<br>
+there&nbsp;is&nbsp;a&nbsp;second&nbsp;known&nbsp;value&nbsp;check.&nbsp;If&nbsp;there&nbsp;is&nbsp;no&nbsp;difference&nbsp;between&nbsp;the&nbsp;two&nbsp;checks.<br>
+Then&nbsp;the&nbsp;tabu&nbsp;search&nbsp;algorithm&nbsp;will&nbsp;make&nbsp;a&nbsp;gamble&nbsp;in&nbsp;the&nbsp;sudoku.&nbsp;And&nbsp;the&nbsp;algorithm&nbsp;will&nbsp;go&nbsp;on.<br>
+When&nbsp;the&nbsp;algorithm&nbsp;detects&nbsp;a&nbsp;fault.&nbsp;The&nbsp;sudoku&nbsp;will&nbsp;be&nbsp;reset,&nbsp;and&nbsp;the&nbsp;gamble&nbsp;that&nbsp;was&nbsp;made<br>
+will&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;tabu&nbsp;list.&nbsp;The&nbsp;tabu&nbsp;list&nbsp;is&nbsp;a&nbsp;list&nbsp;with&nbsp;all&nbsp;the&nbsp;wrong&nbsp;gambles,<br>
+Now&nbsp;the&nbsp;algorithm&nbsp;knows&nbsp;which&nbsp;gamble&nbsp;not&nbsp;to&nbsp;make&nbsp;again.&nbsp;This&nbsp;all&nbsp;runs&nbsp;in&nbsp;a&nbsp;loop&nbsp;until<br>
+all&nbsp;the&nbsp;values&nbsp;are&nbsp;known.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-create_possibility"><strong>create_possibility</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;makes&nbsp;a&nbsp;list&nbsp;with&nbsp;the&nbsp;numbers&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;5,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8&nbsp;and&nbsp;9<br>
+of&nbsp;all&nbsp;the&nbsp;unknown&nbsp;values.&nbsp;in&nbsp;the&nbsp;attribute&nbsp;"data"&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Sudoku-get_data"><strong>get_data</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;data&nbsp;of&nbsp;the&nbsp;sudoku-<a href="builtins.html#object">object</a>.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-not_in_tabu_list"><strong>not_in_tabu_list</strong></a>(self, best_gamble_index, best_gamble_values)</dt><dd><tt>This&nbsp;method&nbsp;check&nbsp;if&nbsp;the&nbsp;combination&nbsp;of&nbsp;the&nbsp;"best_gamble_index"&nbsp;with&nbsp;"best_gamble_values"<br>
+already&nbsp;exist&nbsp;in&nbsp;the&nbsp;tabu&nbsp;list.&nbsp;And&nbsp;returns&nbsp;a&nbsp;True&nbsp;or&nbsp;a&nbsp;False,&nbsp;with&nbsp;the&nbsp;gamble&nbsp;you&nbsp;can&nbsp;made.<br>
+:param&nbsp;best_gamble_index:&nbsp;The&nbsp;index&nbsp;of&nbsp;the&nbsp;best&nbsp;place,&nbsp;to&nbsp;make&nbsp;a&nbsp;gamble.<br>
+:param&nbsp;best_gamble_values:&nbsp;The&nbsp;values&nbsp;of&nbsp;the&nbsp;"best_gamble_index"&nbsp;position.<br>
+:return:&nbsp;True&nbsp;or&nbsp;False,&nbsp;Gamble&nbsp;that&nbsp;you&nbsp;can&nbsp;made.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-print"><strong>print</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;prints&nbsp;the&nbsp;sudoku&nbsp;in&nbsp;a&nbsp;clean&nbsp;format&nbsp;to&nbsp;the&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-set_data"><strong>set_data</strong></a>(self, data)</dt><dd><tt>This&nbsp;method&nbsp;sets&nbsp;the&nbsp;attribute&nbsp;"data"&nbsp;of&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;the&nbsp;given&nbsp;data.<br>
+:param&nbsp;data:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-solve"><strong>solve</strong></a>(self)</dt><dd><tt>This&nbsp;method&nbsp;solves&nbsp;the&nbsp;sudoku.&nbsp;And&nbsp;replace&nbsp;the&nbsp;attribute&nbsp;"data"&nbsp;for&nbsp;the&nbsp;solution.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Sudoku-from_file"><strong>from_file</strong></a>(file_name)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;stored&nbsp;sudoku&nbsp;from&nbsp;the&nbsp;given&nbsp;file,<br>
+and&nbsp;create&nbsp;from&nbsp;that&nbsp;data&nbsp;a&nbsp;sudoku-<a href="builtins.html#object">object</a>.<br>
+:param&nbsp;file_name:&nbsp;location&nbsp;where&nbsp;the&nbsp;file&nbsp;is&nbsp;stored.<br>
+:return:&nbsp;A&nbsp;sudoku-<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;sudoku&nbsp;from&nbsp;the&nbsp;file.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Sudoku-alldifferent"><strong>alldifferent</strong></a>(data)</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;each&nbsp;list&nbsp;of&nbsp;the&nbsp;given&nbsp;2d&nbsp;list&nbsp;for&nbsp;the&nbsp;next&nbsp;thing:<br>
+The&nbsp;known&nbsp;values&nbsp;may&nbsp;not&nbsp;exists&nbsp;in&nbsp;the&nbsp;lists&nbsp;of&nbsp;the&nbsp;possibility&nbsp;for&nbsp;the&nbsp;unknown&nbsp;values.<br>
+So&nbsp;this&nbsp;method&nbsp;remove&nbsp;all&nbsp;known&nbsp;values&nbsp;from&nbsp;that&nbsp;lists.&nbsp;And&nbsp;returns&nbsp;the&nbsp;filtered&nbsp;data.<br>
+:param&nbsp;data:&nbsp;A&nbsp;2d&nbsp;list.<br>
+:return:&nbsp;A&nbsp;filtered&nbsp;data&nbsp;2d&nbsp;list,&nbsp;filtered&nbsp;by&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-alldifferent_rcs"><strong>alldifferent_rcs</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;runs&nbsp;the&nbsp;method&nbsp;"alldifferent"&nbsp;on&nbsp;&nbsp;the<br>
+rows,&nbsp;colomns&nbsp;and&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku.&nbsp;And&nbsp;returns&nbsp;the&nbsp;filtered&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku,&nbsp;filtered&nbsp;by&nbsp;the&nbsp;method&nbsp;"alldifferent".</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-alldifferent_strategy"><strong>alldifferent_strategy</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;runs&nbsp;the&nbsp;standard&nbsp;check&nbsp;over&nbsp;the&nbsp;sudoku.&nbsp;And&nbsp;returns&nbsp;the&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku&nbsp;checked&nbsp;by&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-count_known_values"><strong>count_known_values</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;counts&nbsp;all&nbsp;known&nbsp;values&nbsp;in&nbsp;the&nbsp;given&nbsp;sudoku.<br>
+And&nbsp;returns&nbsp;the&nbsp;number&nbsp;of&nbsp;known&nbsp;values.<br>
+:param&nbsp;sudoku:&nbsp;a&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;number&nbsp;of&nbsp;known&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-double_check"><strong>double_check</strong></a>(data)</dt><dd><tt>This&nbsp;metod&nbsp;checks&nbsp;each&nbsp;list&nbsp;in&nbsp;the&nbsp;given&nbsp;2d&nbsp;list&nbsp;for&nbsp;double&nbsp;values.<br>
+And&nbsp;returns&nbsp;a&nbsp;True&nbsp;or&nbsp;a&nbsp;False.<br>
+:param&nbsp;data:&nbsp;A&nbsp;2d&nbsp;list.<br>
+:return:&nbsp;True&nbsp;or&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-double_check_rcs"><strong>double_check_rcs</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;for&nbsp;double&nbsp;values&nbsp;for&nbsp;the&nbsp;rows,&nbsp;colomns<br>
+and&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;True&nbsp;or&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-get_colomns"><strong>get_colomns</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;separates&nbsp;the&nbsp;colomns&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku<br>
+in&nbsp;a&nbsp;2d&nbsp;list.&nbsp;And&nbsp;returns&nbsp;this&nbsp;list.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;The&nbsp;colomns&nbsp;of&nbsp;the&nbsp;sudoku&nbsp;in&nbsp;a&nbsp;2d&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-get_hint"><strong>get_hint</strong></a>(unsolved, solved)</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;a&nbsp;sudoku&nbsp;with&nbsp;a&nbsp;random&nbsp;hint&nbsp;in&nbsp;a&nbsp;2d&nbsp;list&nbsp;format.<br>
+The&nbsp;hint&nbsp;will&nbsp;be&nbsp;made&nbsp;for&nbsp;the&nbsp;unsolved&nbsp;sudoku.<br>
+:param&nbsp;unsolved:&nbsp;A&nbsp;2d&nbsp;list&nbsp;unsolved&nbsp;sudoku<br>
+:param&nbsp;solved:&nbsp;A&nbsp;2d&nbsp;list&nbsp;solution&nbsp;of&nbsp;the&nbsp;unsolved&nbsp;parameter<br>
+:return:&nbsp;solved:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku&nbsp;with&nbsp;a&nbsp;hint.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-get_min_choice"><strong>get_min_choice</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;gets&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;best&nbsp;gamble&nbsp;position&nbsp;you&nbsp;can&nbsp;made.<br>
+The&nbsp;method&nbsp;get&nbsp;first&nbsp;position&nbsp;with&nbsp;the&nbsp;fewest&nbsp;possibilities.&nbsp;And&nbsp;returns&nbsp;this&nbsp;index.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;The&nbsp;index&nbsp;of&nbsp;the&nbsp;best&nbsp;gamble&nbsp;position.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-get_subgrids"><strong>get_subgrids</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;separates&nbsp;the&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku<br>
+in&nbsp;a&nbsp;2d&nbsp;list.&nbsp;And&nbsp;returns&nbsp;this&nbsp;list.<br>
+:param&nbsp;sudoku:&nbsp;&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;&nbsp;The&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;sudoku&nbsp;in&nbsp;a&nbsp;2d&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-one_check"><strong>one_check</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;each&nbsp;position&nbsp;of&nbsp;the&nbsp;sudoku&nbsp;for&nbsp;the&nbsp;next&nbsp;thing:<br>
+If&nbsp;there&nbsp;is&nbsp;a&nbsp;position&nbsp;that&nbsp;contains&nbsp;one&nbsp;possibility.<br>
+Then&nbsp;that&nbsp;will&nbsp;be&nbsp;the&nbsp;value&nbsp;of&nbsp;that&nbsp;position.<br>
+And&nbsp;returns&nbsp;the&nbsp;filtered&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku,&nbsp;that&nbsp;is&nbsp;check&nbsp;by&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-one_possibility"><strong>one_possibility</strong></a>(data)</dt><dd><tt>This&nbsp;method&nbsp;check&nbsp;each&nbsp;list&nbsp;of&nbsp;the&nbsp;given&nbsp;2d&nbsp;list&nbsp;for&nbsp;the&nbsp;next&nbsp;thing:<br>
+If&nbsp;there&nbsp;is&nbsp;a&nbsp;number&nbsp;in&nbsp;te&nbsp;lists&nbsp;of&nbsp;the&nbsp;possibilities&nbsp;for&nbsp;the&nbsp;unknown&nbsp;values<br>
+that&nbsp;exists&nbsp;once.&nbsp;Then&nbsp;that&nbsp;position&nbsp;will&nbsp;be&nbsp;value&nbsp;of&nbsp;number&nbsp;that&nbsp;exist&nbsp;once.<br>
+And&nbsp;returns&nbsp;the&nbsp;filtered&nbsp;data.<br>
+:param&nbsp;data:&nbsp;A&nbsp;2d&nbsp;list.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list,&nbsp;filtered&nbsp;by&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-one_possibility_c"><strong>one_possibility_c</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;the&nbsp;colomns&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku&nbsp;with&nbsp;the&nbsp;method&nbsp;"one_possibility".<br>
+And&nbsp;returns&nbsp;the&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku,&nbsp;where&nbsp;the&nbsp;colomns&nbsp;are&nbsp;checked&nbsp;by&nbsp;the&nbsp;method&nbsp;"one_possibility".</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-one_possibility_s"><strong>one_possibility_s</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;checks&nbsp;the&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku&nbsp;with&nbsp;the&nbsp;method&nbsp;"one_possibility".<br>
+And&nbsp;returns&nbsp;the&nbsp;sudoku.<br>
+:param&nbsp;sudoku:&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku,&nbsp;where&nbsp;the&nbsp;subgrids&nbsp;are&nbsp;checked&nbsp;by&nbsp;the&nbsp;method&nbsp;"one_possibility".</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-set_colomns"><strong>set_colomns</strong></a>(colomns)</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;given&nbsp;colomns&nbsp;of&nbsp;a&nbsp;sudoku,&nbsp;in&nbsp;a&nbsp;sudoku&nbsp;format.<br>
+:param&nbsp;colomns:&nbsp;The&nbsp;colomns&nbsp;of&nbsp;a&nbsp;sudoku&nbsp;in&nbsp;a&nbsp;2d&nbsp;list.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-set_subgrids"><strong>set_subgrids</strong></a>(subgrids)</dt><dd><tt>This&nbsp;method&nbsp;returns&nbsp;the&nbsp;given&nbsp;subgrids&nbsp;of&nbsp;a&nbsp;sudoku,&nbsp;in&nbsp;a&nbsp;sudoku&nbsp;format.<br>
+:param&nbsp;subgrids:&nbsp;The&nbsp;subgrids&nbsp;of&nbsp;the&nbsp;sudoku&nbsp;in&nbsp;a&nbsp;2d&nbsp;list.<br>
+:return:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.</tt></dd></dl>
+
+<dl><dt><a name="Sudoku-zero_check"><strong>zero_check</strong></a>(sudoku)</dt><dd><tt>This&nbsp;method&nbsp;check&nbsp;that&nbsp;the&nbsp;given&nbsp;sudoku&nbsp;has<br>
+a&nbsp;list&nbsp;with&nbsp;a&nbsp;length&nbsp;of&nbsp;zero.&nbsp;And&nbsp;returns&nbsp;a&nbsp;True&nbsp;aor&nbsp;a&nbsp;False.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;2d&nbsp;list&nbsp;sudoku.<br>
+:return:&nbsp;True&nbsp;or&nbsp;False</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>fault_counter</strong> = 0</dl>
+
+<dl><dt><strong>gamble_counter</strong> = 0</dl>
+
+<dl><dt><strong>gamble_depht</strong> = 0</dl>
+
+<dl><dt><strong>gamble_list</strong> = []</dl>
+
+<dl><dt><strong>loop_counter</strong> = 0</dl>
+
+<dl><dt><strong>tabu_list</strong> = []</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

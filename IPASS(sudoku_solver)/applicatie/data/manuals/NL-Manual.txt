@@ -1,0 +1,15 @@
+Bediening
+- Om te kiezen voor een optie, voer je de waarde in die achter de optie staat.
+- Een "x" betekent in alle gevallen terug, behalve in het hoofdmenu.
+
+Invoer van de sudoku doormiddel van een tekstregel
+- Een tekst regel moet precies uit 81 karakters bestaan.
+- 1t/m9 geven een bekend getal aan van de sudoku.
+- Alle karakters behalve 1t/m9 geven een onbekende aan in de sudoku.
+
+Invoer van de sudoku doormiddel van een bestand
+- Het bestand moet de extensie ".txt" hebben.
+- Het bestand moet geplaats zijn in de map "data\sudokus".
+- Het bestand moet precies 81 karakters bevatten.
+- 1t/m9 geven een bekend getal aan in de sudoku.
+- Alle karakters behalve 1t/m9 geven een onbekende aan in de sudoku.

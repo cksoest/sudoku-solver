@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module app</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>app</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Ccarlo%5Conedrive%20-%20stichting%20hogeschool%20utrecht%5Cipass%5Ccode%5Csudoku-solver%5Capp.py">c:\users\carlo\onedrive - stichting hogeschool utrecht\ipass\code\sudoku-solver\app.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sudoku_solver.html">sudoku_solver</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-change_language_option"><strong>change_language_option</strong></a>(text)</dt><dd><tt>This&nbsp;function&nbsp;give&nbsp;you&nbsp;the&nbsp;option&nbsp;to&nbsp;change&nbsp;the&nbsp;language.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.</tt></dd></dl>
+ <dl><dt><a name="-get_hint_option"><strong>get_hint_option</strong></a>(text, hint, sudoku)</dt><dd><tt>This&nbsp;function&nbsp;prints&nbsp;a&nbsp;hint&nbsp;of&nbsp;the&nbsp;given&nbsp;sudoku&nbsp;to&nbsp;the&nbsp;screen.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.<br>
+:param&nbsp;hint:&nbsp;Choice&nbsp;if&nbsp;you&nbsp;want&nbsp;a&nbsp;hint&nbsp;or&nbsp;not.<br>
+:param&nbsp;sudoku:&nbsp;A&nbsp;sudoku&nbsp;where&nbsp;you&nbsp;want&nbsp;a&nbsp;hint&nbsp;for.</tt></dd></dl>
+ <dl><dt><a name="-get_language"><strong>get_language</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;language,&nbsp;which&nbsp;is&nbsp;set&nbsp;in&nbsp;the&nbsp;"data/languages/language.txt"&nbsp;file<br>
+:return:&nbsp;The&nbsp;language,&nbsp;which&nbsp;is&nbsp;set.</tt></dd></dl>
+ <dl><dt><a name="-get_manual"><strong>get_manual</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;manuals&nbsp;to&nbsp;the&nbsp;application.<br>
+:return:&nbsp;manual</tt></dd></dl>
+ <dl><dt><a name="-get_text"><strong>get_text</strong></a>(language)</dt><dd><tt>This&nbsp;function&nbsp;returns&nbsp;the&nbsp;dataset&nbsp;of&nbsp;the&nbsp;right&nbsp;language<br>
+To&nbsp;the&nbsp;application.&nbsp;In&nbsp;a&nbsp;2d&nbsp;list&nbsp;format.<br>
+:param&nbsp;language:&nbsp;language&nbsp;which&nbsp;is&nbsp;set&nbsp;for&nbsp;the&nbsp;application.<br>
+:return:&nbsp;dataset&nbsp;for&nbsp;the&nbsp;application.</tt></dd></dl>
+ <dl><dt><a name="-main_menu"><strong>main_menu</strong></a>()</dt><dd><tt>This&nbsp;is&nbsp;the&nbsp;main&nbsp;menu&nbsp;with&nbsp;all&nbsp;the&nbsp;available&nbsp;options.</tt></dd></dl>
+ <dl><dt><a name="-manual_option"><strong>manual_option</strong></a>(text)</dt><dd><tt>This&nbsp;function&nbsp;shows&nbsp;the&nbsp;manual&nbsp;of&nbsp;teh&nbsp;application.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.</tt></dd></dl>
+ <dl><dt><a name="-set_language"><strong>set_language</strong></a>(language)</dt><dd><tt>This&nbsp;function&nbsp;sets&nbsp;the&nbsp;language&nbsp;to&nbsp;the&nbsp;given&nbsp;language&nbsp;in&nbsp;the&nbsp;"data/languages/language.txt"&nbsp;file.<br>
+:param&nbsp;language:&nbsp;language&nbsp;you&nbsp;want&nbsp;to&nbsp;use.</tt></dd></dl>
+ <dl><dt><a name="-sudoku_file_option"><strong>sudoku_file_option</strong></a>(text, hint)</dt><dd><tt>This&nbsp;function&nbsp;must&nbsp;be&nbsp;called&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;open<br>
+a&nbsp;sudoku&nbsp;from&nbsp;a&nbsp;file.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.<br>
+:param&nbsp;hint:&nbsp;Choice&nbsp;if&nbsp;you&nbsp;want&nbsp;a&nbsp;hint&nbsp;or&nbsp;not.</tt></dd></dl>
+ <dl><dt><a name="-sudoku_menu"><strong>sudoku_menu</strong></a>(text, hint)</dt><dd><tt>This&nbsp;is&nbsp;menu&nbsp;for&nbsp;the&nbsp;"Solve&nbsp;sudoku"&nbsp;an&nbsp;"Hint&nbsp;for&nbsp;a&nbsp;sudoku"&nbsp;option.<br>
+Where&nbsp;you&nbsp;can&nbsp;choose&nbsp;for&nbsp;text&nbsp;import&nbsp;of&nbsp;file&nbsp;import.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.<br>
+:param&nbsp;hint:&nbsp;Choice&nbsp;if&nbsp;you&nbsp;want&nbsp;a&nbsp;hint&nbsp;or&nbsp;not.</tt></dd></dl>
+ <dl><dt><a name="-sudoku_text_option"><strong>sudoku_text_option</strong></a>(text, hint)</dt><dd><tt>This&nbsp;function&nbsp;must&nbsp;be&nbsp;called&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;open&nbsp;a&nbsp;sudoku<br>
+from&nbsp;a&nbsp;text&nbsp;string.<br>
+:param&nbsp;text:&nbsp;text&nbsp;needed&nbsp;for&nbsp;the&nbsp;application.<br>
+:param&nbsp;hint:&nbsp;Choice&nbsp;if&nbsp;you&nbsp;want&nbsp;a&nbsp;hint&nbsp;or&nbsp;not.</tt></dd></dl>
+</td></tr></table>
+</body></html>
